@@ -2,6 +2,9 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Add {
@@ -38,34 +41,89 @@ public class Add {
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        for (Integer number : arrayList) {
+            Integer result = number % 2 == 0 ? number : number * 3 + 2;
+            resultList.add(result);
+        }
+        return resultList;
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (Integer number : arrayList) {
+            sum += number % 2 == 0 ? 0 : number * 3 + 5;
+        }
+        return sum;
     }
 
     public double getMedianOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> evenIndexList = new ArrayList<Integer>();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (i % 2 == 0) {
+                evenIndexList.add(arrayList.get(i));
+            }
+        }
+        Collections.sort(evenIndexList);
+        int leftMedian = evenIndexList.get((int) Math.floor(evenIndexList.size() / 2));
+        int rightMedian = evenIndexList.get((int) Math.ceil(evenIndexList.size() / 2));
+        double median = (rightMedian + leftMedian) / 2;
+        return median;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = 0;
+        int numberOfEvenIndex = 0;
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (i % 2 == 0) {
+                sum += arrayList.get(i);
+                numberOfEvenIndex++;
+            }
+        }
+        return sum / numberOfEvenIndex;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        boolean isIncluded = false;
+        if (specialElment % 2 == 0 && arrayList.contains(specialElment)) {
+            isIncluded = true;
+        }
+        return isIncluded;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        for (Integer number : arrayList) {
+            if (number % 2 == 0 && !resultList.contains(number)) {
+                resultList.add(number);
+            }
+        }
+        return resultList;
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> evenList = new ArrayList<Integer>();
+        List<Integer> oddList = new ArrayList<Integer>();
+        for (Integer number : arrayList) {
+            if (number % 2 == 0) {
+                evenList.add(number);
+            } else {
+                oddList.add(number);
+            }
+        }
+        Collections.sort(evenList);
+        Collections.sort(oddList);
+        Collections.reverse(oddList);
+        evenList.addAll(oddList);
+        return evenList;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        for (int i = 1; i < arrayList.size(); i++) {
+            Integer result = (arrayList.get(i - 1) + arrayList.get(i)) * 3;
+            resultList.add(result);
+        }
+        return resultList;
     }
 }
