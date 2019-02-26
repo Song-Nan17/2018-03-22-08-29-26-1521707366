@@ -62,6 +62,14 @@ public class CollectionOperator {
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        Collections.addAll(resultList, firstArray);
+        List<Integer> firstList = Arrays.asList(firstArray);
+        for (Integer number : secondArray) {
+            if (!firstList.contains(number)) {
+                resultList.add(number);
+            }
+        }
+        return resultList;
     }
 }
