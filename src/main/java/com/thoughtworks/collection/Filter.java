@@ -45,6 +45,12 @@ public class Filter {
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        for (Integer number : array) {
+            if (!resultList.contains(number)) {
+                resultList.add(number);
+            }
+        }
+        return resultList;
     }
 }
