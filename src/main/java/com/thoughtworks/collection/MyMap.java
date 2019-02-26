@@ -46,7 +46,10 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        List<Integer> resultList = array;
+        Collections.sort(resultList);
+        Collections.reverse(resultList);
+        return resultList;
     }
 
     public List<Integer> sortFromSmall() {
