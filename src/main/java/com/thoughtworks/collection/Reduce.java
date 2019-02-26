@@ -2,7 +2,9 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -13,15 +15,16 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        return Collections.max(arrayList);
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        return Collections.min(arrayList);
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        double sum = arrayList.stream().mapToInt(Integer::intValue).sum();
+        return sum / arrayList.size();
     }
 
     public double getOrderedMedian() {
