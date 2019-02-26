@@ -26,7 +26,11 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        List<String> resultList = new ArrayList<String>();
+        for (Integer number : array) {
+            resultList.add(letterList.get(number - 1));
+        }
+        return resultList;
     }
 
     public List<String> mapLetters() {
