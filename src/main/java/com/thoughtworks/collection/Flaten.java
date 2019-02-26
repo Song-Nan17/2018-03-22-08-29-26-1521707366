@@ -24,6 +24,9 @@ public class Flaten {
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        throw new NotImplementedException();
+        Flaten flaten = new Flaten(array);
+        List<Integer> resultList = flaten.transformToOneDimesional();
+        Filter filter = new Filter(resultList);
+        return filter.getDifferentElements();
     }
 }
