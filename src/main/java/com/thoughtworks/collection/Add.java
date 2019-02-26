@@ -64,10 +64,8 @@ public class Add {
                 evenIndexList.add(arrayList.get(i));
             }
         }
-        Collections.sort(evenIndexList);
-        int leftMedian = evenIndexList.get((int) Math.floor(evenIndexList.size() / 2));
-        int rightMedian = evenIndexList.get((int) Math.ceil(evenIndexList.size() / 2));
-        double median = (rightMedian + leftMedian) / 2;
+        Reduce reduce = new Reduce(evenIndexList);
+        double median = reduce.getOrderedMedian();
         return median;
     }
 
