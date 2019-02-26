@@ -25,7 +25,13 @@ public class Filter {
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new NotImplementedException();
+        List<Integer> resultList = new ArrayList<Integer>();
+        for (Integer number : array) {
+            if (number % 3 == 0) {
+                resultList.add(number);
+            }
+        }
+        return resultList;
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
