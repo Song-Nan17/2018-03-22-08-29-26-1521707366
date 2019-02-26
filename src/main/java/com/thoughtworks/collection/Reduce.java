@@ -28,7 +28,12 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        Collections.sort(arrayList);
+        double latIndex = arrayList.size() - 1;
+        int leftMedian = arrayList.get((int) Math.floor(latIndex / 2));
+        int rightMedian = arrayList.get((int) Math.ceil(latIndex / 2));
+        double median = (leftMedian + rightMedian) / 2.0;
+        return median;
     }
 
     public int getFirstEven() {
