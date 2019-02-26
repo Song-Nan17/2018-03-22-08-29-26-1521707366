@@ -46,7 +46,8 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        throw new NotImplementedException();
+        int lastInedex = array.length - 1;
+        return array[lastInedex];
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
