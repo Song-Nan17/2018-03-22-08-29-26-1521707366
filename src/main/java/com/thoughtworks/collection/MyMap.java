@@ -50,7 +50,8 @@ public class MyMap {
     }
 
     public List<Integer> sortFromSmall() {
-        Collections.sort(array);
-        return array;
+        List<Integer> resultList = array;
+        Collections.sort(resultList);
+        return resultList;
     }
 }
