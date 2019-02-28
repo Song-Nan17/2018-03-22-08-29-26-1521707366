@@ -5,7 +5,6 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -88,7 +87,14 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        int lastOdd = 0;
+        for (int i = arrayList.size() - 1; i >= 0; i--) {
+            if (arrayList.get(i) % 2 != 0) {
+                lastOdd = arrayList.get(i);
+                break;
+            }
+        }
+        return lastOdd;
     }
 
     public int getIndexOfLastOdd() {
