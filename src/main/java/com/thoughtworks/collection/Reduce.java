@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,7 +51,15 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        Iterator<Integer> iterator = arrayList.iterator();
+        while (iterator.hasNext()) {
+            singleLink.addTailPointer(iterator.next());
+        }
+        double latIndex = singleLink.size() - 1;
+        int leftMedian = (int)singleLink.getNode((int) Math.floor(latIndex / 2));
+        int rightMedian = (int)singleLink.getNode((int) Math.ceil(latIndex / 2));
+        double median = (leftMedian + rightMedian) / 2.0;
+        return median;
     }
 
     public int getLastOdd() {
