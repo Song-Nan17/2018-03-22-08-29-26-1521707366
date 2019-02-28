@@ -38,7 +38,14 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        int firstEven = 0;
+        for (Integer number : arrayList) {
+            if (number % 2 == 0) {
+                firstEven = number;
+                break;
+            }
+        }
+        return firstEven;
     }
 
     public int getIndexOfFirstEven() {
@@ -56,8 +63,8 @@ public class Reduce {
             singleLink.addTailPointer(iterator.next());
         }
         double latIndex = singleLink.size() - 1;
-        int leftMedian = (int)singleLink.getNode((int) Math.floor(latIndex / 2));
-        int rightMedian = (int)singleLink.getNode((int) Math.ceil(latIndex / 2));
+        int leftMedian = (int) singleLink.getNode((int) Math.floor(latIndex / 2));
+        int rightMedian = (int) singleLink.getNode((int) Math.ceil(latIndex / 2));
         double median = (leftMedian + rightMedian) / 2.0;
         return median;
     }
