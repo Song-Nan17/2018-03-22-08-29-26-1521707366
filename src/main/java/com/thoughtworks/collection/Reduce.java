@@ -23,7 +23,10 @@ public class Reduce {
     }
 
     public double getAverage() {
-        double sum = arrayList.stream().mapToInt(Integer::intValue).sum();
+        double sum = 0;
+        for (Integer number : arrayList) {
+            sum += number;
+        }
         return sum / arrayList.size();
     }
 
