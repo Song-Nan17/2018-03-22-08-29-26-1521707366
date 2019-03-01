@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import com.sun.deploy.util.ArrayUtil;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.*;
@@ -54,7 +55,7 @@ public class CollectionOperator {
             for (int i = 0; i < secondArray.length; i++) {
                 if (secondArray[i] == number) {
                     resultList.add(number);
-                    continue;
+                    break;
                 }
             }
         }
