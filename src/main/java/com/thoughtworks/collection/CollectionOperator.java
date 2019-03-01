@@ -45,8 +45,8 @@ public class CollectionOperator {
     }
 
     public int popLastElment(int[] array) {
-        int lastInedex = array.length - 1;
-        return array[lastInedex];
+        int lastIndex = array.length - 1;
+        return array[lastIndex];
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {

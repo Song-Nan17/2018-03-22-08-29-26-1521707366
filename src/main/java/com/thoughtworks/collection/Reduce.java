@@ -32,9 +32,9 @@ public class Reduce {
 
     public double getOrderedMedian() {
         Collections.sort(arrayList);
-        double latIndex = arrayList.size() - 1;
-        int leftMedian = arrayList.get((int) Math.floor(latIndex / 2));
-        int rightMedian = arrayList.get((int) Math.ceil(latIndex / 2));
+        double lastIndex = arrayList.size() - 1;
+        int leftMedian = arrayList.get((int) Math.floor(lastIndex / 2));
+        int rightMedian = arrayList.get((int) Math.ceil(lastIndex / 2));
         double median = (leftMedian + rightMedian) / 2.0;
         return median;
     }
@@ -83,9 +83,9 @@ public class Reduce {
             singleLink.addTailPointer(number);
             singleLinkedList.addTailPointer(number);
         }
-        double latIndex = singleLinkedList.size() - 1;
-        int leftMedian = singleLinkedList.getNode((int) Math.floor(latIndex / 2));
-        int rightMedian = singleLinkedList.getNode((int) Math.ceil(latIndex / 2));
+        double lastIndex = singleLinkedList.size() - 1;
+        int leftMedian = singleLinkedList.getNode((int) Math.floor(lastIndex / 2));
+        int rightMedian = singleLinkedList.getNode((int) Math.ceil(lastIndex / 2));
         double median = (leftMedian + rightMedian) / 2.0;
         return median;
     }
