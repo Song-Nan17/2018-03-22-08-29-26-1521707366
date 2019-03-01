@@ -1,9 +1,9 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import com.thoughtworks.collection.single_link.SingleLink;
+import com.thoughtworks.collection.single_link.SingleLinkedList;
 
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class Reduce {
@@ -75,13 +75,14 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        Iterator<Integer> iterator = arrayList.iterator();
-        while (iterator.hasNext()) {
-            singleLink.addTailPointer(iterator.next());
+        SingleLinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
+        for (Integer number : arrayList) {
+            singleLink.addTailPointer(number);
+            singleLinkedList.addTailPointer(number);
         }
-        double latIndex = singleLink.size() - 1;
-        int leftMedian = (int) singleLink.getNode((int) Math.floor(latIndex / 2));
-        int rightMedian = (int) singleLink.getNode((int) Math.ceil(latIndex / 2));
+        double latIndex = singleLinkedList.size() - 1;
+        int leftMedian = singleLinkedList.getNode((int) Math.floor(latIndex / 2));
+        int rightMedian = singleLinkedList.getNode((int) Math.ceil(latIndex / 2));
         double median = (leftMedian + rightMedian) / 2.0;
         return median;
     }

@@ -1,4 +1,4 @@
-package com.thoughtworks.collection;
+package com.thoughtworks.collection.single_link;
 
 public class MyNode<T> {
     private T data;

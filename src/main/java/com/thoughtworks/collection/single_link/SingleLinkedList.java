@@ -1,4 +1,7 @@
-package com.thoughtworks.collection;
+package com.thoughtworks.collection.single_link;
+
+import com.thoughtworks.collection.single_link.MyNode;
+import com.thoughtworks.collection.single_link.SingleLink;
 
 public class SingleLinkedList<T> implements SingleLink<T> {
     private MyNode<T> head;
