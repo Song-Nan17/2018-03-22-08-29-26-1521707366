@@ -64,9 +64,9 @@ public class Add {
                 evenIndexList.add(arrayList.get(i));
             }
         }
-        Reduce reduce = new Reduce(evenIndexList);
-        double median = reduce.getOrderedMedian();
-        return median;
+        int size = evenIndexList.size();
+        return size % 2 != 0 ? evenIndexList.get(size / 2)
+                : (evenIndexList.get(size / 2) + evenIndexList.get(size / 2 - 1)) * 0.5;
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {

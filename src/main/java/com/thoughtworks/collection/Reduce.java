@@ -32,11 +32,8 @@ public class Reduce {
 
     public double getOrderedMedian() {
         Collections.sort(arrayList);
-        double lastIndex = arrayList.size() - 1;
-        int leftMedian = arrayList.get((int) Math.floor(lastIndex / 2));
-        int rightMedian = arrayList.get((int) Math.ceil(lastIndex / 2));
-        double median = (leftMedian + rightMedian) / 2.0;
-        return median;
+        int size = arrayList.size();
+        return size % 2 != 0 ? arrayList.get(size / 2) : (arrayList.get(size / 2) + arrayList.get(size / 2 - 1)) * 0.5;
     }
 
     public int getFirstEven() {
@@ -77,10 +74,9 @@ public class Reduce {
             singleLink.addTailPointer(number);
             singleLinkedList.addTailPointer(number);
         }
-        double lastIndex = singleLinkedList.size() - 1;
-        int leftMedian = singleLinkedList.getNode((int) Math.floor(lastIndex / 2));
-        int rightMedian = singleLinkedList.getNode((int) Math.ceil(lastIndex / 2));
-        double median = (leftMedian + rightMedian) / 2.0;
+        int size = singleLinkedList.size();
+        double median = size % 2 != 0 ? singleLinkedList.getNode(size / 2)
+                : (singleLinkedList.getNode(size / 2) + singleLinkedList.getNode(size / 2 - 1)) * 0.5;
         return median;
     }
 
