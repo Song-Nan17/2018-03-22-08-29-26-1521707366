@@ -51,14 +51,8 @@ public class Reduce {
     }
 
     public int getIndexOfFirstEven() {
-        int index = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) % 2 == 0) {
-                index = i;
-                break;
-            }
-        }
-        return index;
+        int firstEven = this.getFirstEven();
+        return this.arrayList.indexOf(firstEven);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
@@ -102,13 +96,7 @@ public class Reduce {
     }
 
     public int getIndexOfLastOdd() {
-        int index = 0;
-        for (int i = arrayList.size() - 1; i >= 0; i--) {
-            if (arrayList.get(i) % 2 != 0) {
-                index = i;
-                break;
-            }
-        }
-        return index;
+        int lastOdd = this.getLastOdd();
+        return this.arrayList.indexOf(lastOdd);
     }
 }
